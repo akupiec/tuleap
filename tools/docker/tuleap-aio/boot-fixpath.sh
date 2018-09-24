@@ -38,9 +38,11 @@ ln -s /data/etc/crontab crontab
 
 cd /etc/pki/tls/private
 [ ! -f localhost.key ] && ln -s /data/etc/pki/tls/private/localhost.key localhost.key
+[ ! -f localhost.key ] && ln -s /data/etc/pki/tls/private/localhost.key localhost.key.pem
 
 cd /etc/ssl/certs
 [ ! -f localhost.crt ] && ln -s /data/etc/ssl/certs/localhost.crt localhost.crt
+[ ! -f localhost.crt ] && ln -s /data/etc/ssl/certs/localhost.crt localhost.cert.pem
 
 cd /etc/logrotate.d
 ln -s /data/etc/logrotate.d/httpd httpd
